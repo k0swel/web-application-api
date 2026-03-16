@@ -1,9 +1,25 @@
 body {
     font-size: 1.25rem;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 .avatar {
     max-width: 100%;
+}
+
+.card-text {
+    overflow: scroll;
+    text-overflow: ellipsis;
+    max-height: 40vh;
+}
+.card-text::-webkit-scrollbar {
+    display: none;
 }
 
 .post-avatar {
@@ -24,10 +40,6 @@ body {
     flex-direction: column;
 }
 
-.carousel {
-    aspect-ratio: 16/9;
-    max-height: 25vh;
-}
 
 .carousel-inner,
 .carousel-item {

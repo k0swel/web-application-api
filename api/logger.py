@@ -93,19 +93,3 @@ class AccessErrorLogger:
 
 
 logger = AccessErrorLogger().get_logger() # создаём логгер для логирования действий
-
-
-import functools
-from flask import request
-import logging
-
-logger = logging.getLogger(__name__)
-
-def log_query(f):
-    """Декоратор для логирования URL запроса"""
-    @functools.wraps(f)
-    def decorated_function(*args, **kwargs):
-        logger.info(f"Request URL: {request.url} Request method: {request.method}; Request args: {request.args}")
-        result = f(*args, **kwargs)        
-        return result
-    return decorated_function

@@ -6,7 +6,7 @@
         {% for post in posts %}
             <div class="col-md-4 d-flex card-border">
                 <div class="card mb-4">
-                    <div id="carouselPost{{ loop.index0 }}" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselPost{{ post.id }}" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             {% for image in post.images %}
                                 <div class="carousel-item {% if loop.first %}active{% endif %}">
@@ -16,11 +16,11 @@
                         </div>
                         
                         {% if post.images|length > 1 %}
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPost{{ loop.index0 }}" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPost{{ post.id }}" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Предыдущий</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselPost{{ loop.index0 }}" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselPost{{ post.id }}" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Следующий</span>
                             </button>
@@ -29,16 +29,16 @@
                     
                     <div class="card-body d-flex flex-column">
                         <h2 class="card-title">{{ post.title }}</h2>
-                        <p class="card-text">
-                            {{ post.text | truncate(100) }}
-                        </p>
+                        <div class="card-text">
+                            {{ post.text | safe  }}
+                        </div>
                     
                         <div class="read-full-btn mt-auto">
-                            <a href="{{ url_for('post', index=loop.index0) }}" class="btn btn-primary">Читать дальше &rarr;</a>    
+                            <a href="{{ url_for('post', index=post.id) }}" class="btn btn-primary">Читать дальше &rarr;</a>    
                         </div>
                     </div>                
                     <div class="card-footer text-muted">
-                        Опубликовано {{ post.creation_date.strftime('%d.%m.%Y') }}.
+                        Опубликовано {{ post.creation_date }}.
                         Автор: {{ post.author }}
                     </div>
                 </div>

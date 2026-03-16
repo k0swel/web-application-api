@@ -6,3 +6,5 @@
 2026-03-10 04:03:02 - api - ERROR - database_api.py:59 - Тип ошибки: ProgrammingError
 2026-03-10 04:03:32 - api - ERROR - database_api.py:57 - Ошибка при выполнении запроса для ID 1: Unknown column 'pi.sort_order' in 'ORDER BY'
 2026-03-10 04:03:32 - api - ERROR - database_api.py:58 - Тип ошибки: ProgrammingError
+2026-03-16 20:53:52 - api - CRITICAL - database_api.py:39 - Сервер MariaDB по адресу 127.0.0.1:3306 недоступен
+2026-03-16 20:55:02 - api - CRITICAL - database_api.py:39 - Сервер MariaDB по адресу 127.0.0.1:3306 недоступен
