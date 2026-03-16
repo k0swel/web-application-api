@@ -1,0 +1,8 @@
+2026-03-10 03:30:47 - api - ERROR - database_api.py:21 - Возникла ошибка при создании объекта SMariaDB: Unknown database 'p'
+2026-03-10 03:58:38 - api - ERROR - database_api.py:44 - Ошибка при выполнении запроса: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JP' at line 1
+2026-03-10 03:59:36 - api - ERROR - database_api.py:44 - Ошибка при выполнении запроса: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JP' at line 1
+2026-03-10 04:00:21 - api - ERROR - database_api.py:44 - Ошибка при выполнении запроса: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JP' at line 1
+2026-03-10 04:03:02 - api - ERROR - database_api.py:58 - Ошибка при выполнении запроса для ID 1: Unknown column 'i.mime_type' in 'SELECT'
+2026-03-10 04:03:02 - api - ERROR - database_api.py:59 - Тип ошибки: ProgrammingError
+2026-03-10 04:03:32 - api - ERROR - database_api.py:57 - Ошибка при выполнении запроса для ID 1: Unknown column 'pi.sort_order' in 'ORDER BY'
+2026-03-10 04:03:32 - api - ERROR - database_api.py:58 - Тип ошибки: ProgrammingError

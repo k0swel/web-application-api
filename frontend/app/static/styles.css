@@ -1,0 +1,57 @@
+body {
+    font-size: 1.25rem;
+}
+
+.avatar {
+    max-width: 100%;
+}
+
+.post-avatar {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* Карточки постов */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel {
+    aspect-ratio: 16/9;
+    max-height: 25vh;
+}
+
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Изображение на странице поста */
+.post-image {
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Аватар комментария */
+.comment-avatar {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    flex-shrink: 0;
+}

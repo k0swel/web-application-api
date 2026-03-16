@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="my-5">{{ post.title }}</h1>
+
+    <div class="d-flex align-items-center mb-4">
+        <img src="{{ post.avatar_path }}" alt="Аватар пользователя" class="post-avatar me-3"/>
+        <div>
+            <h5 class="mb-0">{{ post.author }}</h5>
+            <small class="text-muted">{{ post.creation_date }}</small>
+        </div>
+    </div>
+
+    {% if post.images %}
+        <div id="carouselPost" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for image in post.images %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <img src="{{ image.image }}" class="d-block w-100 post-image" alt="Изображение к посту">
+                    </div>
+                {% endfor %}
+            </div>
+            {% if post.images|length > 1 %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPost" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselPost" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <div class="mb-5">
+        <p>{{ post.text }}</p>
+    </div>
+
+    <hr>
+
+    <h3 class="mb-4">Комментарии</h3>
+
+    {% for comment in comments %}
+        <div class="d-flex mb-4">
+            <img src="{{ comment.avatar }}" alt="Аватар" class="comment-avatar me-3">
+            <div>
+                <h5 class="mt-0">{{ comment.author }} <small class="text-muted">{{ comment.date }}</small></h5>
+                <p>{{ comment.text }}</p>
+
+                {% if comment.replies %}
+                    {% for reply in comment.replies %}
+                        <div class="d-flex mt-3">
+                            <img src="{{ reply.avatar }}" alt="Аватар" class="comment-avatar me-3">
+                            <div>
+                                <h5 class="mt-0">{{ reply.author }} <small class="text-muted">{{ reply.date }}</small></h5>
+                                <p>{{ reply.text }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <hr>
+
+    <h3 class="mb-3">Оставьте комментарий</h3>
+    <div class="mb-5">
+        <div class="mb-3">
+            <label for="commentAuthor" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="commentAuthor" placeholder="Введите ваше имя">
+        </div>
+        <div class="mb-3">
+            <label for="commentText" class="form-label">Комментарий</label>
+            <textarea class="form-control" id="commentText" rows="3" placeholder="Введите текст комментария"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary">Отправить</button>
+    </div>
+{% endblock %}
