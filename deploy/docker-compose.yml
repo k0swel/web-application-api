@@ -1,9 +1,0 @@
-services:
-  database:
-    image: mariadb:latest
-    ports:
-      - "3306:3306"
-    env_file:
-      - .env
-    container_name: "lab1_database"
-    network_mode: host
