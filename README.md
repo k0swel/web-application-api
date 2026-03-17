@@ -13,4 +13,7 @@ Type=simple
 User=debian
 Group=debian
 ExecStart=/home/debian/api/run_api.sh
+
+[Install]
+WantedBy=multi-user.target
 ```
